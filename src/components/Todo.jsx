@@ -12,6 +12,7 @@ const Todo = () => {
     if (!todo.trim()) return;
     await addTodosApi({task: todo});
     setTodo("");
+    getTodos();
   }
 
   
