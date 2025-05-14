@@ -10,22 +10,24 @@ const Todo = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     if (!todo.trim()) return;
-    await addTodosApi({task: todo});
+    await addTodosApi({task: todo});//create
     setTodo("");
     getTodos();
   }
 
-  
-
   const getTodos = async () => {
-    let result = await getTodosApi();
+    let result = await getTodosApi();//read
     setApiResult(result.data);
     console.log(result.data);
   }
 
   const deleteTodos = async (id) => {
-    let result = await deleteTodosApi(id);
+    let result = await deleteTodosApi(id);//delete
     getTodos();
+  }
+
+  const editTodos = async (e) => {
+    
   }
 
   useEffect(() => {
